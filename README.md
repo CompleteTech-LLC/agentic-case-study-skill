@@ -69,6 +69,28 @@ python3 scripts/render_proof.py \
 
 Rendered assets are drafts. Replace placeholders with verified, client-approved facts before public or external use.
 
+## Example
+
+![Anonymized case study preview](assets/examples/example.png)
+
+**Anonymized case study: Support Queue Stabilization**
+
+Use this when delivery evidence is real, but public attribution is not approved yet.
+
+```bash
+python3 scripts/render_proof.py \
+  --template anonymized-case-study \
+  --var client_name="Confidential B2B SaaS Company" \
+  --var workflow="support intake and triage" \
+  --var before_state="tickets were manually sorted across three queues with inconsistent escalation notes" \
+  --var after_state="a reviewed agentic triage workflow drafts classifications, escalation notes, and next-step summaries for human approval" \
+  --var approval_status="anonymized internal and sales-use only"
+```
+
+Example positioning:
+
+> CompleteTech LLC helped a growing SaaS support team turn a high-friction triage queue into a reviewed workflow where suggested classifications, escalation notes, and customer-ready summaries are prepared consistently before a human approves any external response.
+
 ## Brand Notes
 
 Use careful evidence packaging. Distinguish measured outcomes from qualitative observations, protect confidential details, anonymize when needed, avoid regulated-use assurances, avoid legal claims, avoid fabricated ROI/savings metrics, and preserve the CompleteTech LLC emphasis on bounded implementation, human approval gates, evaluation, monitoring, documentation, support, and handoff.
