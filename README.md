@@ -17,8 +17,8 @@ Part of the CompleteTech LLC agentic services skill library. This skill packages
 - Homepage: https://github.com/CompleteTech-LLC/agentic-case-study-skill
 - README: https://github.com/CompleteTech-LLC/agentic-case-study-skill#readme
 - Runtime binaries: `python3`
-- Python packages: none
-- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `case-study`, `testimonials`, `proof-assets`
+- Python packages: `reportlab>=4.0` (optional PNG preview: `pypdfium2`, `pillow`)
+- Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `case-study`, `testimonials`, `proof-assets`, `pdf`, `pdf-generator`
 - License: repository code, templates, and documentation use MIT; ClawHub publishing is intentionally skipped for now.
 - Brand assets: CompleteTech LLC names, logos, seals, and brand assets are reserved; see `BRAND_ASSETS.md`.
 
@@ -55,6 +55,8 @@ flowchart LR
 - `references/proof-lifecycle.md` - flow from proof intake through approval and reuse.
 - `references/proof-positioning.md` - CompleteTech LLC evidence and anonymization guardrails.
 - `scripts/render_proof.py` - deterministic template listing and rendering helper.
+- `scripts/render_pdf.py` - branded CompleteTech PDF generator (Markdown -> PDF + optional PNG preview).
+- `requirements.txt` - Python dependencies for branded PDF rendering.
 
 ## Quick Start
 
@@ -71,28 +73,29 @@ Rendered assets are drafts. Replace placeholders with verified, client-approved 
 
 ## Example
 
-![Anonymized case study preview](assets/examples/example.png)
+![Customer Support Email Triage Agent preview](assets/examples/example.png)
 
-Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document **branded PDF** rendered from the generated artifact: [example.pdf](assets/examples/example.pdf). Markdown source: [example.md](assets/examples/example.md).
 
-**Anonymized case study: Support Queue Stabilization**
+**Client case study: Northwind Trading Co. — Customer Support Email Triage Agent**
 
-Use this when delivery evidence is real, but public attribution is not approved yet.
+- Named, client-approved proof with measured outcomes from the pilot evaluation set.
+- Separates measured outcomes (93.4% routing accuracy) from qualitative observations.
+- Includes an approved customer quote and the safety controls behind the result.
+- Uses only verified, approved facts — no invented ROI or permissions.
+
+Generate the branded PDF (artifacts are delivered as PDFs, not raw Markdown):
 
 ```bash
-python3 scripts/render_proof.py \
-  --template anonymized-case-study \
-  --var client_name="Confidential B2B SaaS Company" \
-  --var workflow="support intake and triage" \
-  --var before_state="tickets were manually sorted across three queues with inconsistent escalation notes" \
-  --var after_state="a reviewed agentic triage workflow drafts classifications, escalation notes, and next-step summaries for human approval" \
-  --var approval_status="anonymized internal and sales-use only" \
-  > assets/examples/example.md
+pip install -r requirements.txt
+# 1) Draft the artifact (optionally start from a catalog template)
+python3 scripts/render_proof.py --template public-named-client-case-study > assets/examples/example.md
+# 2) Render the branded CompleteTech PDF (+ optional PNG preview)
+python3 scripts/render_pdf.py --markdown assets/examples/example.md \
+  --out assets/examples/example.pdf --png assets/examples/example.png \
+  --logo assets/logo.png --title "Customer Support Email Triage Agent" \
+  --doc-type "CLIENT CASE STUDY" --subtitle "Northwind Trading Co. × CompleteTech LLC" --meta "CASE NO.=CASE-2026-007" --meta "DATE=2026-07-01" --meta "ATTRIBUTION=Approved"
 ```
-
-Example positioning:
-
-> CompleteTech LLC helped a growing SaaS support team turn a high-friction triage queue into a reviewed workflow where suggested classifications, escalation notes, and customer-ready summaries are prepared consistently before a human approves any external response.
 
 ## Brand Notes
 
