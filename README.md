@@ -84,18 +84,18 @@ Full-document **branded PDF** rendered from the generated artifact: [example.pdf
 - Includes an approved customer quote and the safety controls behind the result.
 - Uses only verified, approved facts — no invented ROI or permissions.
 
-Generate the branded PDF (artifacts are delivered as PDFs, not raw Markdown):
+Generate it in one command (branded PDF + Markdown, like the contract skill):
 
 ```bash
 pip install -r requirements.txt
-# 1) Draft the artifact (optionally start from a catalog template)
-python3 scripts/render_proof.py --template public-named-client-case-study > assets/examples/example.md
-# 2) Render the branded CompleteTech PDF (+ optional PNG preview)
-python3 scripts/render_pdf.py --markdown assets/examples/example.md \
+python3 scripts/render_proof.py --template public-named-client-case-study \
   --out assets/examples/example.pdf --png assets/examples/example.png \
-  --logo assets/logo.png --title "Customer Support Email Triage Agent" \
-  --doc-type "CLIENT CASE STUDY" --subtitle "Northwind Trading Co. × CompleteTech LLC" --meta "CASE NO.=CASE-2026-007" --meta "DATE=2026-07-01" --meta "ATTRIBUTION=Approved"
+  --markdown-out assets/examples/example.md \
+  --logo assets/logo.png --title "Customer Support Email Triage Agent" --doc-type "CLIENT CASE STUDY" \
+  --subtitle "Northwind Trading Co. × CompleteTech LLC" --meta "CASE NO.=CASE-2026-007" --meta "DATE=2026-07-01"
 ```
+
+The committed `example.{md,pdf,png}` use curated, realistic demonstration data for the Northwind Trading Co. support-triage pilot; pass `--var key=value` to fill template placeholders with your own facts.
 
 ## Brand Notes
 
