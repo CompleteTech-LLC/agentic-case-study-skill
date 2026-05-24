@@ -73,7 +73,7 @@ Rendered assets are drafts. Replace placeholders with verified, client-approved 
 
 ![Anonymized case study preview](assets/examples/example.png)
 
-Preview converted from generated artifact: [example.md](assets/examples/example.md).
+Full-document preview converted from generated artifact: [example.md](assets/examples/example.md).
 
 **Anonymized case study: Support Queue Stabilization**
 
