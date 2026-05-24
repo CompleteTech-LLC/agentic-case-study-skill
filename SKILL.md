@@ -1,6 +1,15 @@
 ---
 name: agentic-case-study-skill
-description: Create CompleteTech LLC case studies, testimonials, and proof assets for completed agentic development engagements, including intake questionnaires, outcome interview guides, anonymized and named-client case studies, before/after workflow summaries, implementation stories, technical notes, risk/control summaries, approval-gate summaries, evaluation results, testimonial requests/drafts, proof libraries, sales one-pagers, website stories, LinkedIn posts, nurture emails, referral blurbs, portfolio entries, pitches, award submissions, press releases, quote approvals, and anonymization checks. Use after delivery when Codex needs to package verified client-approved outcomes without exposing confidential details or inventing proof.
+description: >-
+  Create CompleteTech LLC case studies, testimonials, and proof assets for completed agentic development engagements, including intake questionnaires, outcome interview guides, anonymized and named-client case studies, before/after workflow summaries, implementation stories, technical notes, risk/control summaries, approval-gate summaries, evaluation results, testimonial requests/drafts, proof libraries, sales one-pagers, website stories, LinkedIn posts, nurture emails, referral blurbs, portfolio entries, pitches, award submissions, press releases, quote approvals, and anonymization checks. Use after delivery when Codex needs to package verified client-approved outcomes without exposing confidential details or inventing proof.
+version: 1.0.0
+metadata:
+  openclaw:
+    skillKey: agentic-case-study-skill
+    homepage: https://github.com/CompleteTech-LLC/agentic-case-study-skill
+    requires:
+      bins:
+        - python3
 ---
 
 # Agentic Case Study Skill
