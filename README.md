@@ -73,6 +73,8 @@ Rendered assets are drafts. Replace placeholders with verified, client-approved 
 
 ![Anonymized case study preview](assets/examples/example.png)
 
+Preview converted from generated artifact: [example.md](assets/examples/example.md).
+
 **Anonymized case study: Support Queue Stabilization**
 
 Use this when delivery evidence is real, but public attribution is not approved yet.
@@ -84,7 +86,8 @@ python3 scripts/render_proof.py \
   --var workflow="support intake and triage" \
   --var before_state="tickets were manually sorted across three queues with inconsistent escalation notes" \
   --var after_state="a reviewed agentic triage workflow drafts classifications, escalation notes, and next-step summaries for human approval" \
-  --var approval_status="anonymized internal and sales-use only"
+  --var approval_status="anonymized internal and sales-use only" \
+  > assets/examples/example.md
 ```
 
 Example positioning:
