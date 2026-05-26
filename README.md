@@ -13,13 +13,13 @@ Part of the CompleteTech LLC agentic services skill library. This skill packages
 ## OpenClaw / ClawHub Metadata
 
 - Skill key: `agentic-case-study-skill`
-- Version-ready metadata: `1.0.0`
+- Version-ready metadata: `1.0.3`
 - Homepage: https://github.com/CompleteTech-LLC/agentic-case-study-skill
 - README: https://github.com/CompleteTech-LLC/agentic-case-study-skill#readme
 - Runtime binaries: `python3`
-- Python packages: `reportlab>=4.0` (optional PNG preview: `pypdfium2`, `pillow`)
+- Python packages: `reportlab==4.5.1`, `pyyaml==6.0.3` (optional PNG preview: `pypdfium2==5.8.0`, `pillow==12.2.0`)
 - Intended registry/discovery tags: `latest`, `complete-tech`, `codex-skill`, `agentic-development`, `agentic-workflows`, `case-study`, `testimonials`, `proof-assets`, `pdf`, `pdf-generator`
-- License: repository code, templates, and documentation use MIT; ClawHub publishing is intentionally skipped for now.
+- License: repository code, templates, and documentation use MIT; published by CompleteTech on ClawHub.
 - Brand assets: CompleteTech LLC names, logos, seals, and brand assets are reserved; see `BRAND_ASSETS.md`.
 
 ## Workflow Diagram
@@ -103,6 +103,10 @@ The committed `example.{md,pdf,png}` use curated, realistic demonstration data f
 ## Brand Notes
 
 Use careful evidence packaging. Distinguish measured outcomes from qualitative observations, protect confidential details, anonymize when needed, avoid regulated-use assurances, avoid legal claims, avoid fabricated ROI/savings metrics, and preserve the CompleteTech LLC emphasis on bounded implementation, human approval gates, evaluation, monitoring, documentation, support, and handoff.
+
+## Runtime Permissions
+
+This skill needs local filesystem access only for the documented renderer workflow. It reads bundled templates, references, examples, `assets/logo.png`, and user-provided Markdown or variables, then writes only to the selected `--out`, `--png`, `--markdown-out`, or default `output/` artifact paths. It runs local Python renderer entry points and does not require network access, credential access, persistence, privilege escalation, or destructive file operations.
 
 ## License
 

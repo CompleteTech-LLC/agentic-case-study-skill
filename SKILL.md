@@ -2,7 +2,7 @@
 name: agentic-case-study-skill
 description: >-
   Create CompleteTech LLC case studies, testimonials, and proof assets for completed agentic development engagements, including intake questionnaires, outcome interview guides, anonymized and named-client case studies, before/after workflow summaries, implementation stories, technical notes, risk/control summaries, approval-gate summaries, evaluation results, testimonial requests/drafts, proof libraries, sales one-pagers, website stories, LinkedIn posts, nurture emails, referral blurbs, portfolio entries, pitches, award submissions, press releases, quote approvals, and anonymization checks. Use after delivery when Codex needs to package verified client-approved outcomes without exposing confidential details or inventing proof.
-version: 1.0.2
+version: 1.0.3
 metadata:
   openclaw:
     skillKey: agentic-case-study-skill
@@ -12,9 +12,13 @@ metadata:
         - python3
     install:
       - kind: uv
-        package: reportlab>=4.0
+        package: reportlab==4.5.1
       - kind: uv
-        package: pyyaml>=6.0
+        package: pypdfium2==5.8.0
+      - kind: uv
+        package: pillow==12.2.0
+      - kind: uv
+        package: pyyaml==6.0.3
 ---
 
 # Agentic Case Study Skill
@@ -85,6 +89,15 @@ When several artifacts fit, choose the safest asset that matches approval status
 - `references/proof-catalog.md`: load for the near-exhaustive proof asset templates.
 - `references/template-index.json`: machine-readable template metadata used by the renderer.
 - `scripts/render_proof.py`: list proof assets or render a draft with placeholders.
+
+## Runtime Permissions
+
+This skill needs local filesystem access only for its documented renderer workflow:
+
+- Reads bundled templates, references, examples, `assets/logo.png`, and user-provided Markdown or variable inputs.
+- Writes only to the user-selected `--out`, `--png`, `--markdown-out`, or default `output/` artifact paths.
+- Runs local Python entry points `scripts/render_proof.py` and `scripts/render_pdf.py`.
+- Does not require network access, credential access, persistence, privilege escalation, or destructive file operations.
 
 ## Renderer
 
