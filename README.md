@@ -24,6 +24,9 @@ Part of the CompleteTech LLC agentic services skill library. This skill packages
 
 ## Workflow Diagram
 
+Source: [assets/diagrams/workflow.mmd](assets/diagrams/workflow.mmd).
+
+
 ```mermaid
 flowchart LR
   A[Verified delivery evidence] --> B[Approval and attribution check]

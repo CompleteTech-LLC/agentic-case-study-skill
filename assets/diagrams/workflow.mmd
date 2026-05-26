@@ -1,0 +1,13 @@
+flowchart LR
+  A[Verified delivery evidence] --> B[Approval and attribution check]
+  B --> C{Public use allowed?}
+  C -->|No| D[Anonymized proof asset]
+  C -->|Yes| E[Named case study or testimonial]
+  D --> F[Sales, website, nurture, or portfolio reuse]
+  E --> F
+  classDef source fill:#eef6ff,stroke:#3778c2,color:#102a43;
+  classDef gate fill:#fff7e6,stroke:#c97a12,color:#3d2600;
+  classDef output fill:#eefaf0,stroke:#2f8f46,color:#12351d;
+  class A source;
+  class B,C gate;
+  class D,E,F output;
