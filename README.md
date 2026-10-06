@@ -3,7 +3,10 @@
 # Agentic Case Study Skill
 
 <p align="center">
-  <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
+    <img src="assets/logo.png" alt="CompleteTech LLC logo" width="260">
+  </picture>
 </p>
 
 A CompleteTech LLC Codex skill for creating case studies, testimonials, and proof assets after agentic development delivery.
